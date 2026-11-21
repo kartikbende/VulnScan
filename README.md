@@ -1,5 +1,5 @@
 # VulnScan 🔍
-
+            
 **A Python-Based Network Vulnerability Scanner**
 
 VulnScan is a Python-based cybersecurity project designed to identify open TCP ports, detect running services, extract service version information, and identify potential security vulnerabilities by mapping detected versions against known CVE records.
