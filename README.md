@@ -15,18 +15,19 @@ The project demonstrates fundamental concepts of network scanning, service enume
 - Map detected software versions against a local CVE database.
 - Generate structured vulnerability assessment reports.
 
-## ⚙️ Planned Features
+## ⚙️ Features
 
-- [ ] TCP port scanning
-- [ ] Multi-threaded scanning
-- [ ] Service detection
-- [ ] Banner grabbing
+- [x] TCP port scanning
+- [x] Multi-threaded scanning
+- [x] IP address validation
+- [x] Connection timeout handling
+- [x] Basic TCP service identification
+- [ ] Service detection through banner grabbing
 - [ ] Software version extraction using Regex
 - [ ] Local CVE database integration
 - [ ] Vulnerability matching engine
 - [ ] CVE severity classification
 - [ ] JSON report generation
-- [ ] Command-line interface
 
 ## 🏗️ Architecture
 
@@ -120,6 +121,28 @@ pip install -r requirements.txt
 ## 💻 Usage
 
 Usage instructions and command-line examples will be added as the scanner implementation progresses.
+
+## 🔍 TCP Scanning Methodology
+
+VulnScan currently uses TCP Connect Scanning.
+
+The scanner attempts to establish TCP connections with
+specified ports using Python's socket library.
+
+A successful connection indicates that the target port
+accepts TCP connections.
+
+Concurrent scanning is implemented using Python's
+ThreadPoolExecutor.
+
+The scanner identifies:
+- Open ports
+- Connection-refused ports
+- Timed-out connections
+- Unknown connection errors
+
+Note: A TCP connection timeout does not conclusively
+establish that a port is filtered.
 
 ## 📊 Vulnerability Identification Methodology
 
